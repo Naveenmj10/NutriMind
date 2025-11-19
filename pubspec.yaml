@@ -1,0 +1,57 @@
+name: nutri_mind
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0-290.4.beta
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # routing
+  auto_route: ^9.3.0+1
+
+  # injection
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+
+  # provider:
+  provider: ^6.1.2
+
+  #utils
+  equatable: ^2.0.7
+  copy_with_extension: ^6.0.1
+  json_annotation: ^4.9.0
+
+  # Reachability
+  connectivity_plus: ^5.0.2
+
+  # Lottie animation
+  lottie: ^3.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  build_runner: ^2.4.14
+
+  auto_route_generator: ^9.3.1
+
+  injectable_generator: ^2.7.0
+
+  copy_with_extension_gen: ^6.0.1
+
+  json_serializable: ^6.9.3
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # the material Icons class.
+  uses-material-design: true
+
