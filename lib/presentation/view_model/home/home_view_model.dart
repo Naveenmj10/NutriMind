@@ -38,4 +38,8 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
   Future <void> handleNavigationToAIPoweredNutritionScreen() async {
       navigationService.navigateToAiPoweredNutritionScreen();
   }
+
+  Future <void> handleNavigationToScanMealsScreen() async {
+      navigationService.navigateToScanMealScreen();
+  }
 }

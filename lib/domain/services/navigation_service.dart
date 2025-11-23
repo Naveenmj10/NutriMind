@@ -39,4 +39,9 @@ class NavigationService {
     appRouter.navigate(const GeneratedDietRoute());
   }
 
+  ///
+  Future<void> navigateToScanMealScreen() async {
+    appRouter.navigate(const ScanMealRoute());
+  }
+
 }

@@ -231,33 +231,38 @@ class HomeScreen extends StatelessWidget {
                         // Two buttons at the top
                         Row(
                           children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 18,
-                              ),
-                              decoration: BoxDecoration(
-                                color: appColors.teal,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.search,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    "Scan Your Meal",
-                                    style: TextStyle(
-                                      fontFamily: FontFamily.inter,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
+                            InkWell(
+                              onTap: (){
+                                viewModel.handleNavigationToScanMealsScreen();
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 18,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: appColors.teal,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.search,
                                       color: Colors.white,
+                                      size: 20,
                                     ),
-                                  ),
-                                ],
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      "Scan Your Meal",
+                                      style: TextStyle(
+                                        fontFamily: FontFamily.inter,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             const SizedBox(width: 12),

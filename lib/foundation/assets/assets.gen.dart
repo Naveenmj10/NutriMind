@@ -22,6 +22,10 @@ class $AssetsImagesGen {
   AssetGenImage get icnBanner =>
       const AssetGenImage('assets/images/icn_banner.png');
 
+  /// File path: assets/images/icn_camera.png
+  AssetGenImage get icnCamera =>
+      const AssetGenImage('assets/images/icn_camera.png');
+
   /// File path: assets/images/icn_carbs.png
   AssetGenImage get icnCarbs =>
       const AssetGenImage('assets/images/icn_carbs.png');
@@ -66,10 +70,15 @@ class $AssetsImagesGen {
   AssetGenImage get icnTrainers =>
       const AssetGenImage('assets/images/icn_trainers.png');
 
+  /// File path: assets/images/icn_upload.png
+  AssetGenImage get icnUpload =>
+      const AssetGenImage('assets/images/icn_upload.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     icnAppstore,
     icnBanner,
+    icnCamera,
     icnCarbs,
     icnClock,
     icnDetectMealBg,
@@ -81,6 +90,7 @@ class $AssetsImagesGen {
     icnProtein,
     icnScanMeal,
     icnTrainers,
+    icnUpload,
   ];
 }
 

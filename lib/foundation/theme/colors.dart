@@ -20,6 +20,12 @@ class AppColors {
   final Color borderGrey = const Color.fromRGBO(79, 75, 75, 1);
 
   ///
+  final Color grey = const Color.fromRGBO(40, 40, 40, 1);
+
+  ///
+  final Color darkGrey = const Color.fromRGBO(35, 34, 32, 1);
+
+  ///
   final Color yellow = const Color.fromRGBO(255, 230, 66, 1);
 
   ///
