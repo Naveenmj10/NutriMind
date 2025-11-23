@@ -14,12 +14,74 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/icn_appstore.png
+  AssetGenImage get icnAppstore =>
+      const AssetGenImage('assets/images/icn_appstore.png');
+
+  /// File path: assets/images/icn_banner.png
+  AssetGenImage get icnBanner =>
+      const AssetGenImage('assets/images/icn_banner.png');
+
+  /// File path: assets/images/icn_carbs.png
+  AssetGenImage get icnCarbs =>
+      const AssetGenImage('assets/images/icn_carbs.png');
+
+  /// File path: assets/images/icn_clock.png
+  AssetGenImage get icnClock =>
+      const AssetGenImage('assets/images/icn_clock.png');
+
+  /// File path: assets/images/icn_detect_meal_bg.png
+  AssetGenImage get icnDetectMealBg =>
+      const AssetGenImage('assets/images/icn_detect_meal_bg.png');
+
   /// File path: assets/images/icn_diet.png
   AssetGenImage get icnDiet =>
       const AssetGenImage('assets/images/icn_diet.png');
 
+  /// File path: assets/images/icn_fats.png
+  AssetGenImage get icnFats =>
+      const AssetGenImage('assets/images/icn_fats.png');
+
+  /// File path: assets/images/icn_fitness_lovers.png
+  AssetGenImage get icnFitnessLovers =>
+      const AssetGenImage('assets/images/icn_fitness_lovers.png');
+
+  /// File path: assets/images/icn_google_play.png
+  AssetGenImage get icnGooglePlay =>
+      const AssetGenImage('assets/images/icn_google_play.png');
+
+  /// File path: assets/images/icn_oat_meal.png
+  AssetGenImage get icnOatMeal =>
+      const AssetGenImage('assets/images/icn_oat_meal.png');
+
+  /// File path: assets/images/icn_protein.png
+  AssetGenImage get icnProtein =>
+      const AssetGenImage('assets/images/icn_protein.png');
+
+  /// File path: assets/images/icn_scan_meal.png
+  AssetGenImage get icnScanMeal =>
+      const AssetGenImage('assets/images/icn_scan_meal.png');
+
+  /// File path: assets/images/icn_trainers.png
+  AssetGenImage get icnTrainers =>
+      const AssetGenImage('assets/images/icn_trainers.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [icnDiet];
+  List<AssetGenImage> get values => [
+    icnAppstore,
+    icnBanner,
+    icnCarbs,
+    icnClock,
+    icnDetectMealBg,
+    icnDiet,
+    icnFats,
+    icnFitnessLovers,
+    icnGooglePlay,
+    icnOatMeal,
+    icnProtein,
+    icnScanMeal,
+    icnTrainers,
+  ];
 }
 
 class Assets {

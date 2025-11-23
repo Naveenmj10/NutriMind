@@ -14,7 +14,6 @@ class DietInfoWidget extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Center(
         child: Stack(
           clipBehavior: Clip.none,

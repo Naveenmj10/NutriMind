@@ -14,6 +14,9 @@ class AppColors {
   final Color teal = const Color.fromRGBO(37, 171, 117, 1);
 
   ///
+  final Color green = const Color.fromRGBO(76, 217, 100, 1);
+
+  ///
   final Color borderGrey = const Color.fromRGBO(79, 75, 75, 1);
 
   ///

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../domain/services/connectivity_service.dart';
+import '../../../domain/services/navigation_service.dart';
 import '../../../foundation/abstracts/base_view_model.dart';
 import 'home_view_state.dart';
 
@@ -9,8 +10,15 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
   ///
   final GlobalKey<ScaffoldState> key = GlobalKey<ScaffoldState>();
 
-  HomeViewModel() : super(HomeViewState.init()) {
-    init();
+  ///
+  final NavigationService navigationService;
+
+
+  HomeViewModel(
+      {required this.navigationService,
+      })
+      : super(HomeViewState.init()) {
+    debugPrint("Call Navigation");
   }
 
   ///
@@ -27,5 +35,7 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
     });
   }
 
-  void handleNavigationFromSplashScreen() {}
+  Future <void> handleNavigationToAIPoweredNutritionScreen() async {
+      navigationService.navigateToAiPoweredNutritionScreen();
+  }
 }

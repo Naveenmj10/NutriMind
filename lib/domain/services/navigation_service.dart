@@ -23,4 +23,20 @@ class NavigationService {
   Future<void> navigateToHomeScreen() async {
     appRouter.navigate(const HomeRoute());
   }
+
+  ///
+  Future<void> navigateToAiPoweredNutritionScreen() async {
+    appRouter.navigate(const AiPoweredNutritionRoute());
+  }
+
+  ///
+  Future<void> navigateToAiDietPlannerScreen() async {
+    appRouter.navigate(const DietPlannerRoute());
+  }
+
+  ///
+  Future<void> navigateToGeneratedDietScreen() async {
+    appRouter.navigate(const GeneratedDietRoute());
+  }
+
 }
