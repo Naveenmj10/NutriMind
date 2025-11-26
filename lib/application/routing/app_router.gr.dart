@@ -17,9 +17,10 @@ import 'package:nutri_mind/presentation/view/diet_planner/diet_planner_screen.da
 import 'package:nutri_mind/presentation/view/generated_diet/generated_diet_screen.dart'
     as _i3;
 import 'package:nutri_mind/presentation/view/home/home_screen.dart' as _i4;
-import 'package:nutri_mind/presentation/view/scan/scan_result_screen.dart'
+import 'package:nutri_mind/presentation/view/scan_meal/scan_result_screen.dart'
     as _i6;
-import 'package:nutri_mind/presentation/view/scan/scanning_screen.dart' as _i5;
+import 'package:nutri_mind/presentation/view/scan_meal/scanning_screen.dart'
+    as _i5;
 import 'package:nutri_mind/presentation/view/splash/splash_screen.dart' as _i7;
 
 /// generated route for

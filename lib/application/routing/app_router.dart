@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:nutri_mind/presentation/view/scan/scanning_screen.dart';
 
 import 'app_router.gr.dart';
 
@@ -15,6 +14,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(path: '/ai-powered-nutrition', page: AiPoweredNutritionRoute.page),
     AutoRoute(path: '/ai-diet-planner', page: DietPlannerRoute.page),
     AutoRoute(path: '/generated-diet', page: GeneratedDietRoute.page),
-    AutoRoute(path: '/scan-meal', page: ScanMealRoute.page),
+    AutoRoute(path: '/scan-meal-meal', page: ScanMealRoute.page),
+    AutoRoute(path: '/scan-result', page: ScanResultRoute.page),
   ];
 }

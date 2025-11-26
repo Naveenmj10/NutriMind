@@ -54,6 +54,10 @@ class $AssetsImagesGen {
   AssetGenImage get icnGooglePlay =>
       const AssetGenImage('assets/images/icn_google_play.png');
 
+  /// File path: assets/images/icn_grilled_chicken.png
+  AssetGenImage get icnGrilledChicken =>
+      const AssetGenImage('assets/images/icn_grilled_chicken.png');
+
   /// File path: assets/images/icn_oat_meal.png
   AssetGenImage get icnOatMeal =>
       const AssetGenImage('assets/images/icn_oat_meal.png');
@@ -86,6 +90,7 @@ class $AssetsImagesGen {
     icnFats,
     icnFitnessLovers,
     icnGooglePlay,
+    icnGrilledChicken,
     icnOatMeal,
     icnProtein,
     icnScanMeal,
