@@ -240,7 +240,7 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
               style: TextStyle(
                 color:appColors.primaryWhite,
                 fontWeight: FontWeight.w700,
-                fontSize: 7.8,
+                fontSize: 12,
               ),
             ),
           ),
@@ -250,7 +250,7 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
             label,
             style:  TextStyle(
               color: appColors.primaryWhite,
-              fontSize: 9,
+              fontSize: 12,
               fontWeight: FontWeight.w500,
             ),
           ),
