@@ -16,5 +16,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(path: '/generated-diet', page: GeneratedDietRoute.page),
     AutoRoute(path: '/scan-meal-meal', page: ScanMealRoute.page),
     AutoRoute(path: '/scan-result', page: ScanResultRoute.page),
+    AutoRoute(path: '/auth-register', page: TrainerRegistrationRoute.page),
   ];
 }

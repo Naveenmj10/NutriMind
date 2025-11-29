@@ -49,4 +49,11 @@ class NavigationService {
     appRouter.navigate(const ScanResultRoute());
   }
 
+  ///
+  Future<void> navigateToLoginOrSignUpScreen() async {
+    appRouter.navigate(const TrainerRegistrationRoute());
+  }
+
+
+
 }

@@ -31,4 +31,26 @@ class AppColors {
   ///
   final Color sky_blue = const Color.fromRGBO(46, 220, 214, 1);
 
+  ///
+  final Color activeColor = const Color(0xFF20C48A);
+
+  ///
+  final Color darkGreen = const Color(0xFF20C48A);
+
+  ///
+  final Color darkGreyColor = const Color(0xff6D7280);
+
+  ///
+  final Color hintColor = const Color(0xff6D7280);
+
+  ///
+  final Color textColor = const Color(0xff737373);
+
+  ///
+  final Color hintStyle1 = const Color(0xffA9A7A7);
+
+
+
+
+
 }

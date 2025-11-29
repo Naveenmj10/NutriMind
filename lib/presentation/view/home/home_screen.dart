@@ -110,25 +110,24 @@ class HomeScreen extends StatelessWidget {
                       spacing: 16,
                       children: [
                         SizedBox(
-                          width: (screenSize.width - 68) / 2,
-                          height: 60,
+                          width: (screenSize.width) / 2.5,
                           child: CustomButton(
                             title: "Login/SignUp",
-                            onPressed: () {},
+                            onPressed: () {
+                              viewModel.handleNavigationToLoginOrSignUpScreen();
+                            },
                             backgroundColor: Colors.transparent,
                             textColor: Colors.white,
                             borderColor: appColors.borderGrey,
                             textStyle: TextStyle(
                               fontFamily: FontFamily.inter,
                               fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              letterSpacing: 0.5,
+                              fontSize: 15,
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: (screenSize.width - 68) / 2,
-                          height: 60,
+                          width: (screenSize.width) / 2.5,
                           child: CustomButton(
                             title: "Join as Trainer",
                             onPressed: () {},
@@ -138,8 +137,7 @@ class HomeScreen extends StatelessWidget {
                             textStyle: TextStyle(
                               fontFamily: FontFamily.inter,
                               fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              letterSpacing: 0.5,
+                              fontSize: 15,
                             ),
                           ),
                         ),

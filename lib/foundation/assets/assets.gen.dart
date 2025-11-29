@@ -14,6 +14,22 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/ai_image.png
+  AssetGenImage get aiImage =>
+      const AssetGenImage('assets/images/ai_image.png');
+
+  /// File path: assets/images/apple_icon.png
+  AssetGenImage get appleIcon =>
+      const AssetGenImage('assets/images/apple_icon.png');
+
+  /// File path: assets/images/blur_img.png
+  AssetGenImage get blurImg =>
+      const AssetGenImage('assets/images/blur_img.png');
+
+  /// File path: assets/images/google_icon.png
+  AssetGenImage get googleIcon =>
+      const AssetGenImage('assets/images/google_icon.png');
+
   /// File path: assets/images/icn_appstore.png
   AssetGenImage get icnAppstore =>
       const AssetGenImage('assets/images/icn_appstore.png');
@@ -78,8 +94,19 @@ class $AssetsImagesGen {
   AssetGenImage get icnUpload =>
       const AssetGenImage('assets/images/icn_upload.png');
 
+  /// File path: assets/images/trainer_regis_bg.png
+  AssetGenImage get trainerRegisBg =>
+      const AssetGenImage('assets/images/trainer_regis_bg.png');
+
+  /// File path: assets/images/welcome.png
+  AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
+    aiImage,
+    appleIcon,
+    blurImg,
+    googleIcon,
     icnAppstore,
     icnBanner,
     icnCamera,
@@ -96,6 +123,8 @@ class $AssetsImagesGen {
     icnScanMeal,
     icnTrainers,
     icnUpload,
+    trainerRegisBg,
+    welcome,
   ];
 }
 
