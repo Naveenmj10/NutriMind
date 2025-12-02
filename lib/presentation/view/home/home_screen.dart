@@ -114,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                           child: CustomButton(
                             title: "Login/SignUp",
                             onPressed: () {
-                              viewModel.handleNavigationToLoginOrSignUpScreen();
+                              viewModel.handleNavigationToCreateAccountScreen();
                             },
                             backgroundColor: Colors.transparent,
                             textColor: Colors.white,

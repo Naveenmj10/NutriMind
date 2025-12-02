@@ -30,6 +30,10 @@ class $AssetsImagesGen {
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/images/google_icon.png');
 
+  /// File path: assets/images/icn_apple.png
+  AssetGenImage get icnApple =>
+      const AssetGenImage('assets/images/icn_apple.png');
+
   /// File path: assets/images/icn_appstore.png
   AssetGenImage get icnAppstore =>
       const AssetGenImage('assets/images/icn_appstore.png');
@@ -66,6 +70,10 @@ class $AssetsImagesGen {
   AssetGenImage get icnFitnessLovers =>
       const AssetGenImage('assets/images/icn_fitness_lovers.png');
 
+  /// File path: assets/images/icn_google.png
+  AssetGenImage get icnGoogle =>
+      const AssetGenImage('assets/images/icn_google.png');
+
   /// File path: assets/images/icn_google_play.png
   AssetGenImage get icnGooglePlay =>
       const AssetGenImage('assets/images/icn_google_play.png');
@@ -85,6 +93,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/icn_scan_meal.png
   AssetGenImage get icnScanMeal =>
       const AssetGenImage('assets/images/icn_scan_meal.png');
+
+  /// File path: assets/images/icn_tick.png
+  AssetGenImage get icnTick =>
+      const AssetGenImage('assets/images/icn_tick.png');
 
   /// File path: assets/images/icn_trainers.png
   AssetGenImage get icnTrainers =>
@@ -107,6 +119,7 @@ class $AssetsImagesGen {
     appleIcon,
     blurImg,
     googleIcon,
+    icnApple,
     icnAppstore,
     icnBanner,
     icnCamera,
@@ -116,11 +129,13 @@ class $AssetsImagesGen {
     icnDiet,
     icnFats,
     icnFitnessLovers,
+    icnGoogle,
     icnGooglePlay,
     icnGrilledChicken,
     icnOatMeal,
     icnProtein,
     icnScanMeal,
+    icnTick,
     icnTrainers,
     icnUpload,
     trainerRegisBg,

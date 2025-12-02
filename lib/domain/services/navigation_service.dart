@@ -54,6 +54,10 @@ class NavigationService {
     appRouter.navigate(const TrainerRegistrationRoute());
   }
 
+  ///
+  Future<void> navigateToCreateAccountScreen() async {
+    appRouter.navigate(const CreateAnAccountRoute());
+  }
 
 
 }

@@ -17,10 +17,19 @@ class AppColors {
   final Color green = const Color.fromRGBO(76, 217, 100, 1);
 
   ///
+  final Color lightGreen = const Color.fromRGBO(12, 148, 9, 1);
+
+  ///
   final Color borderGrey = const Color.fromRGBO(79, 75, 75, 1);
 
   ///
   final Color grey = const Color.fromRGBO(40, 40, 40, 1);
+
+  ///
+  final Color lightBlue = const Color.fromRGBO(136, 157, 192, 0.8);
+
+  ///
+  final Color bgGrey = const Color.fromRGBO(58, 52, 52, 1);
 
   ///
   final Color darkGrey = const Color.fromRGBO(35, 34, 32, 1);

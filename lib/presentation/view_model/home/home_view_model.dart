@@ -46,4 +46,8 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
   Future <void> handleNavigationToLoginOrSignUpScreen() async {
       navigationService.navigateToLoginOrSignUpScreen();
   }
+
+  Future <void> handleNavigationToCreateAccountScreen() async {
+      navigationService.navigateToCreateAccountScreen();
+  }
 }
