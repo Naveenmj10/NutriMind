@@ -37,6 +37,14 @@ class AppColors {
   ///
   final Color darkGreen = const Color(0xFF20C48A);
 
+  final Color stepsColor = const Color(0xff25AB75);
+
+  ///
+  final Color orangeColor = const Color(0xffFF7042);
+
+  ///
+  final Color dashContainerColor = const  Color(0xff3A3434);
+
   ///
   final Color darkGreyColor = const Color(0xff6D7280);
 
@@ -48,6 +56,21 @@ class AppColors {
 
   ///
   final Color hintStyle1 = const Color(0xffA9A7A7);
+
+  final Color chartColor = const Color(0xffFFA257);
+
+
+
+
+
+  // final Color activeColor = const Color(0xFF20C48A);
+
+  final Color darkGreenNew = const Color(0xFF20C48A);
+
+  // final Color darkGreyColor = const Color(0xff6D7280);
+  // final Color hintColor = const Color(0xff6D7280);
+  // final Color textColor = const Color(0xff737373);
+  // final Color hintStyle1 = const Color(0xffA9A7A7);
 
 
 

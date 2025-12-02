@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:nutri_mind/presentation/view/dashboard/health_dashboard_screen.dart';
 
 import '../../application/routing/app_router.dart';
 import '../../application/routing/app_router.gr.dart';
@@ -52,6 +53,10 @@ class NavigationService {
   ///
   Future<void> navigateToLoginOrSignUpScreen() async {
     appRouter.navigate(const TrainerRegistrationRoute());
+  }
+
+  Future<void> navigateToHealthDashBoardScreen() async {
+    appRouter.navigate(const HealthDashBoardRoute());
   }
 
 

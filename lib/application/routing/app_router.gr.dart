@@ -24,6 +24,10 @@ import 'package:nutri_mind/presentation/view/scan_meal/scan_result_screen.dart'
 import 'package:nutri_mind/presentation/view/scan_meal/scanning_screen.dart'
     as _i5;
 import 'package:nutri_mind/presentation/view/splash/splash_screen.dart' as _i7;
+import 'package:nutri_mind/presentation/view/auth/trainer_registration_screen.dart' as _i8;
+import 'package:nutri_mind/presentation/view/dashboard/health_dashboard_screen.dart' as _i9;
+
+
 
 /// generated route for
 /// [_i1.AiPoweredNutritionScreen]
@@ -137,6 +141,21 @@ class SplashRoute extends _i9.PageRouteInfo<void> {
   );
 }
 
+/// [_i8.RegisterScreen]
+class RegisterRoute extends _i9.PageRouteInfo<void> {
+  const RegisterRoute({List<_i9.PageRouteInfo>? children})
+      : super(RegisterRoute.name, initialChildren: children);
+
+  static const String name = 'RegisterRoute';
+
+  static _i9.PageInfo page = _i9.PageInfo(
+    name,
+    builder: (data) {
+      return const _i8.TrainerRegistrationScreen();
+    },
+  );
+}
+
 /// generated route for
 /// [_i8.TrainerRegistrationScreen]
 class TrainerRegistrationRoute extends _i9.PageRouteInfo<void> {
@@ -149,6 +168,21 @@ class TrainerRegistrationRoute extends _i9.PageRouteInfo<void> {
     name,
     builder: (data) {
       return const _i8.TrainerRegistrationScreen();
+    },
+  );
+}
+
+///[_i9.HealthDashboardScreen]
+class HealthDashBoardRoute extends _i9.PageRouteInfo<void> {
+  const HealthDashBoardRoute({List<_i9.PageRouteInfo>? children})
+      : super(HealthDashBoardRoute.name, initialChildren: children);
+
+  static const String name = 'HealthDashBoardRoute';
+
+  static _i9.PageInfo page = _i9.PageInfo(
+    name,
+    builder: (data) {
+      return const _i9.HealthDashboardScreen();
     },
   );
 }

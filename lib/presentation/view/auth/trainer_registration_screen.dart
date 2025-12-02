@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/services.dart';
 import 'package:nutri_mind/foundation/theme/colors.dart';
+import 'package:nutri_mind/presentation/view_model/dashboard/health_dashboard_provider.dart';
+import 'package:nutri_mind/presentation/view_model/dashboard/health_dashboard_view_model.dart';
 import 'package:pinput/pinput.dart';
 
 import 'package:auto_route/annotations.dart';
@@ -39,183 +41,192 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     // final vm = Provider.of<AuthViewModel>(context);
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return HealthDashboardProvider(
+      builder: (context, child) {
+        final HealthDashboardViewModel viewModel = Provider.of<HealthDashboardViewModel>(
+          context,
+          listen: true,
+        );
+
+        return Scaffold(
+          backgroundColor: Colors.black,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("NutriMind", style: TextStyle(color: appColors.primaryWhite, fontSize: 14, fontWeight: FontWeight.w700)),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      topBarButton("Login/SignUp", bg: appColors.black, fg: appColors.primaryWhite),
-                      SizedBox(width: 8),
-                      topBarButton("Join as Trainer", bg: Color(0xff25AB75), fg: appColors.primaryWhite),
+                      Text("NutriMind", style: TextStyle(color: appColors.primaryWhite, fontSize: 14, fontWeight: FontWeight.w700)),
+                      Row(
+                        children: [
+                          topBarButton("Login/SignUp", bg: appColors.black, fg: appColors.primaryWhite),
+                          SizedBox(width: 8),
+                          topBarButton("Join as Trainer", bg: Color(0xff25AB75), fg: appColors.primaryWhite),
+                        ],
+                      ),
                     ],
                   ),
-                ],
-              ),
-              SizedBox(height: 16),
+                  SizedBox(height: 16),
 
-              Container(
-                width: double.infinity,
-                // padding: const EdgeInsets.symmetric(),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(17.7),
-                  border: Border.all(color:appColors.primaryWhite, width: 0.75)
-                ),
-                child: Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(16),
-                        bottomLeft: Radius.circular(15),
-                      ),
-                      child: Assets.images.welcome.image(
-                        width: 71,
-                        height: 153,
-                        fit: BoxFit.cover,
-                      ),
+                  Container(
+                    width: double.infinity,
+                    // padding: const EdgeInsets.symmetric(),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(17.7),
+                      border: Border.all(color:appColors.primaryWhite, width: 0.75)
                     ),
-                    const SizedBox(width: 12),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(16),
+                            bottomLeft: Radius.circular(15),
+                          ),
+                          child: Assets.images.welcome.image(
+                            width: 71,
+                            height: 153,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
 
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric( horizontal: 12),
-                            child: Column(
-                              children: [
-                                Text(
-                                  "Welcome Back !",
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric( horizontal: 12),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Welcome Back !",
+                                      style: TextStyle(
+                                        color: appColors.primaryWhite,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.3,
+                                        fontFamily: FontFamily.inter
+                                      ),
+                                    ),
+                               SizedBox(height: 8),
+                              Text(
+                                "Please sign in to enjoy the stress-free\n                "
+                                    "and tension free life!",
+                                style: TextStyle(
+                                  color: appColors.primaryWhite,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.45,
+                                ),
+                              ),
+
+                              const SizedBox(height: 8),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "New to AI? Create A new account",
+                                    style: TextStyle(
+                                      color: appColors.primaryWhite.withOpacity(0.85),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                ],
+                              ),
+
+                              const SizedBox(height: 8),
+
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8,),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(0.75),
+                                  border: Border.all(color: appColors.primaryWhite, width: 1),
+                                ),
+                                child:  Text(
+                                  "Sign Up",
                                   style: TextStyle(
-                                    color: appColors.primaryWhite,
-                                    fontSize: 16,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.3,
-                                    fontFamily: FontFamily.inter
+                                    fontSize: 14,
+                                    color: appColors.primaryWhite,
+                                    letterSpacing: 0.3,
                                   ),
                                 ),
-                           SizedBox(height: 8),
-                          Text(
-                            "Please sign in to enjoy the stress-free\n                "
-                                "and tension free life!",
-                            style: TextStyle(
-                              color: appColors.primaryWhite,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              height: 1.45,
-                            ),
-                          ),
-
-                          const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "New to AI? Create A new account",
-                                style: TextStyle(
-                                  color: appColors.primaryWhite.withOpacity(0.85),
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w500,
-                                ),
                               ),
-                              const SizedBox(width: 10),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
-
-                          const SizedBox(height: 8),
-
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8,),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(0.75),
-                              border: Border.all(color: appColors.primaryWhite, width: 1),
-                            ),
-                            child:  Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                color: appColors.primaryWhite,
-                                letterSpacing: 0.3,
-                              ),
-                            ),
-                          ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              SizedBox(height: 20),
-
-              /// Trainer Registration box
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                decoration: BoxDecoration(
-                  // image: DecorationImage(
-                  //   image: Assets.images.trainerRegister.provider(),
-                  //   fit: BoxFit.cover,
-                  // ),
-                  borderRadius: BorderRadius.circular(40),
-                  color: Colors.black.withOpacity(0.85), // overlay
-                ),
-                child: Column(
-                  children: [
-
-                    Text("Trainer Registration",
-                        style: TextStyle(
-                            color: appColors.primaryWhite,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600)),
-                    SizedBox(height: 16),
-
-                    Row(
-                      children: [
-                        _stepItem(1, currentStep == 0, "Account"),
-                        _line(),
-                        _stepItem(2, currentStep == 1, "Profile"),
-                        _line(),
-                        _stepItem(3, currentStep == 2, "Services"),
+                        )
                       ],
                     ),
+                  ),
 
-                    SizedBox(height: 18),
-                    SizedBox(
-                      height: 630,
-                      child: PageView(
-                        controller: _pageCtrl,
-                        physics: BouncingScrollPhysics(),
-                        onPageChanged: (i) {
-                          setState(() => currentStep = i);
-                        },
-                        children: [
-                          _accountPage(),
-                          _profilePage(),
-                          _servicesPage(),
-                        ],
-                      ),
+                  SizedBox(height: 20),
+
+                  /// Trainer Registration box
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    decoration: BoxDecoration(
+                      // image: DecorationImage(
+                      //   image: Assets.images.trainerRegister.provider(),
+                      //   fit: BoxFit.cover,
+                      // ),
+                      borderRadius: BorderRadius.circular(40),
+                      color: Colors.black.withOpacity(0.85), // overlay
                     ),
-                  ],
-                ),
-              )
-            ],
+                    child: Column(
+                      children: [
+
+                        Text("Trainer Registration",
+                            style: TextStyle(
+                                color: appColors.primaryWhite,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600)),
+                        SizedBox(height: 16),
+
+                        Row(
+                          children: [
+                            _stepItem(1, currentStep == 0, "Account"),
+                            _line(),
+                            _stepItem(2, currentStep == 1, "Profile"),
+                            _line(),
+                            _stepItem(3, currentStep == 2, "Services"),
+                          ],
+                        ),
+
+                        SizedBox(height: 18),
+                        SizedBox(
+                          height: 630,
+                          child: PageView(
+                            controller: _pageCtrl,
+                            physics: BouncingScrollPhysics(),
+                            onPageChanged: (i) {
+                              setState(() => currentStep = i);
+                            },
+                            children: [
+                              _accountPage(),
+                              _profilePage(),
+                              _servicesPage(viewModel),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      }
     );
   }
 
@@ -240,7 +251,7 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
               style: TextStyle(
                 color:appColors.primaryWhite,
                 fontWeight: FontWeight.w700,
-                fontSize: 12,
+                fontSize: 7.8,
               ),
             ),
           ),
@@ -250,7 +261,7 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
             label,
             style:  TextStyle(
               color: appColors.primaryWhite,
-              fontSize: 12,
+              fontSize: 9,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -718,7 +729,7 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
 
 
   /// for service page
-  Widget _servicesPage() {
+  Widget _servicesPage(HealthDashboardViewModel viewModel) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -884,7 +895,9 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
           width: double.infinity,
           height: 50,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              viewModel.handleNavigationToHealthDashboardScreen();
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF20C48A),
               shape: RoundedRectangleBorder(
@@ -941,3 +954,4 @@ class _TrainerRegistrationScreenState extends State<TrainerRegistrationScreen> {
 
 
 }
+

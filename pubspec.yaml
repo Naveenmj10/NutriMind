@@ -44,6 +44,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 
   build_runner: ^2.4.14
+  pinput: ^6.0.1
 
   auto_route_generator: ^9.3.1
 
@@ -52,6 +53,8 @@ dev_dependencies:
   copy_with_extension_gen: ^6.0.1
 
   json_serializable: ^6.9.3
+
+  fl_chart: ^1.1.1
 
   # assets generation:
 

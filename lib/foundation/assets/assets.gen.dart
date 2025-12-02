@@ -101,6 +101,13 @@ class $AssetsImagesGen {
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
+
+  /// File path: assets/images/welcome.png
+  AssetGenImage get weight => const AssetGenImage('assets/images/weight_img.png');
+  AssetGenImage get weight1 => const AssetGenImage('assets/images/weight_img.png');
+
+
+
   /// List of all assets
   List<AssetGenImage> get values => [
     aiImage,
@@ -125,6 +132,8 @@ class $AssetsImagesGen {
     icnUpload,
     trainerRegisBg,
     welcome,
+    weight,
+    weight1
   ];
 }
 
