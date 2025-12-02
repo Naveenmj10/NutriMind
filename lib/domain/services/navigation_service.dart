@@ -79,4 +79,7 @@ class NavigationService {
     appRouter.navigate(ChangePasswordRoute());
   }
 
+  Future<void> navigateToHealthDashBoardScreen() async {
+    appRouter.navigate(const HealthDashboardRoute());
+  }
 }

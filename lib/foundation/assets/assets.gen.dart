@@ -30,6 +30,9 @@ class $AssetsImagesGen {
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/images/google_icon.png');
 
+  /// File path: assets/images/human.png
+  AssetGenImage get human => const AssetGenImage('assets/images/human.png');
+
   /// File path: assets/images/icn_apple.png
   AssetGenImage get icnApple =>
       const AssetGenImage('assets/images/icn_apple.png');
@@ -114,6 +117,10 @@ class $AssetsImagesGen {
   AssetGenImage get trainerRegisBg =>
       const AssetGenImage('assets/images/trainer_regis_bg.png');
 
+  /// File path: assets/images/weight_img.png
+  AssetGenImage get weightImg =>
+      const AssetGenImage('assets/images/weight_img.png');
+
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
@@ -123,6 +130,7 @@ class $AssetsImagesGen {
     appleIcon,
     blurImg,
     googleIcon,
+    human,
     icnApple,
     icnAppstore,
     icnBanner,
@@ -144,6 +152,7 @@ class $AssetsImagesGen {
     icnTrainers,
     icnUpload,
     trainerRegisBg,
+    weightImg,
     welcome,
   ];
 }
