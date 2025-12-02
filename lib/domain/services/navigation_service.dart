@@ -69,4 +69,9 @@ class NavigationService {
     appRouter.navigate(const ResetPasswordRoute());
   }
 
+  ///
+  Future<void> navigateToVerifyOTPScreen(String enteredEmail) async {
+    appRouter.navigate(OTPVerificationRoute(email: enteredEmail));
+  }
+
 }

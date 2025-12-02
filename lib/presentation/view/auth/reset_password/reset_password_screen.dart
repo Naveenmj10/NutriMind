@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:nutri_mind/foundation/assets/assets.gen.dart';
 import 'package:nutri_mind/presentation/view_model/login/login_provider.dart';
 import 'package:nutri_mind/presentation/view_model/login/login_view_model.dart';
+import 'package:nutri_mind/presentation/view_model/reset_password/reset_password_provider.dart';
+import 'package:nutri_mind/presentation/view_model/reset_password/reset_password_view_model.dart';
 import 'package:provider/provider.dart';
 import '../../../../foundation/assets/fonts.gen.dart';
 import '../../../../foundation/theme/colors.dart';
@@ -39,12 +41,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
 
   bool get _isFormValid => _emailValid;
 
-  void _sendOTP() {
+  void _sendOTP(ResetPasswordViewModel viewModel) {
     if (_isFormValid) {
       // TODO: Implement OTP sending logic
       print("Sending OTP to: ${_emailController.text}");
-      // You can call your view model method here
-      // viewModel.sendOTP(_emailController.text);
+      viewModel.handleNavigationToVerifyOtpScreen(_emailController.text);
     }
   }
 
@@ -59,9 +60,9 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   Widget build(BuildContext context) {
     final AppColors appColors = injector<AppColors>();
 
-    return LoginProvider(
+    return ResetPasswordProvider(
       builder: (context, child) {
-        final LoginViewModel viewModel = Provider.of<LoginViewModel>(
+        final ResetPasswordViewModel viewModel = Provider.of<ResetPasswordViewModel>(
           context,
           listen: true,
         );
@@ -93,7 +94,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
 
                       Padding(
                         padding: const EdgeInsets.all(10),
-                        child: _buildSendOTPButton(appColors),
+                        child: _buildSendOTPButton(appColors, viewModel),
                       ),
                     ],
                   ),
@@ -195,11 +196,14 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 
-  Widget _buildSendOTPButton(AppColors colors) {
+  Widget _buildSendOTPButton(AppColors colors, ResetPasswordViewModel viewModel) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: _isFormValid ? _sendOTP : null,
+        onPressed: _isFormValid ? () {
+          _sendOTP(viewModel);
+        } :
+         null,
         style: ElevatedButton.styleFrom(
           backgroundColor: _isFormValid
               ? colors.teal

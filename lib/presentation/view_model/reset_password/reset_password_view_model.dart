@@ -27,4 +27,8 @@ class ResetPasswordViewModel extends ViewModel<ResetPasswordViewModel, ResetPass
   Future <void> handleNavigationToCreateAccountScreen() async {
     navigationService.navigateToCreateAccountScreen();
   }
+
+  Future <void> handleNavigationToVerifyOtpScreen(String enteredEmail) async {
+    navigationService.navigateToVerifyOTPScreen(enteredEmail);
+  }
 }
