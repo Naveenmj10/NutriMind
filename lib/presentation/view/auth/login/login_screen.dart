@@ -104,7 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       const SizedBox(height: 30),
 
-                      _buildForgetPasswordRedirect(() {}, appColors),
+                      _buildForgetPasswordRedirect(() {
+                        viewModel.handleNavigationToResetPasswordScreen();
+                      }, appColors),
 
                       const SizedBox(height: 30),
 

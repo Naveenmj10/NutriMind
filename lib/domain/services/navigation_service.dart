@@ -64,5 +64,9 @@ class NavigationService {
     appRouter.navigate(const LoginRoute());
   }
 
+  ///
+  Future<void> navigateToResetPasswordScreen() async {
+    appRouter.navigate(const ResetPasswordRoute());
+  }
 
 }
