@@ -9,40 +9,42 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i13;
-import 'package:flutter/material.dart' as _i14;
+import 'package:auto_route/auto_route.dart' as _i14;
+import 'package:flutter/material.dart' as _i15;
 import 'package:nutri_mind/presentation/view/ai_powered_nutrition/ai_powered_nutrition_screen.dart'
     as _i1;
-import 'package:nutri_mind/presentation/view/auth/create_account/create_account.dart'
+import 'package:nutri_mind/presentation/view/auth/change_password/change_password_screen.dart'
     as _i2;
-import 'package:nutri_mind/presentation/view/auth/login/login_screen.dart'
-    as _i6;
-import 'package:nutri_mind/presentation/view/auth/reset_password/reset_password_screen.dart'
-    as _i8;
-import 'package:nutri_mind/presentation/view/auth/trainer_registration_screen.dart'
-    as _i12;
-import 'package:nutri_mind/presentation/view/auth/verify_otp/verify_otp_screen.dart'
-    as _i7;
-import 'package:nutri_mind/presentation/view/diet_planner/diet_planner_screen.dart'
+import 'package:nutri_mind/presentation/view/auth/create_account/create_account.dart'
     as _i3;
-import 'package:nutri_mind/presentation/view/generated_diet/generated_diet_screen.dart'
-    as _i4;
-import 'package:nutri_mind/presentation/view/home/home_screen.dart' as _i5;
-import 'package:nutri_mind/presentation/view/scan_meal/scan_result_screen.dart'
-    as _i10;
-import 'package:nutri_mind/presentation/view/scan_meal/scanning_screen.dart'
+import 'package:nutri_mind/presentation/view/auth/login/login_screen.dart'
+    as _i7;
+import 'package:nutri_mind/presentation/view/auth/reset_password/reset_password_screen.dart'
     as _i9;
-import 'package:nutri_mind/presentation/view/splash/splash_screen.dart' as _i11;
+import 'package:nutri_mind/presentation/view/auth/trainer_registration_screen.dart'
+    as _i13;
+import 'package:nutri_mind/presentation/view/auth/verify_otp/verify_otp_screen.dart'
+    as _i8;
+import 'package:nutri_mind/presentation/view/diet_planner/diet_planner_screen.dart'
+    as _i4;
+import 'package:nutri_mind/presentation/view/generated_diet/generated_diet_screen.dart'
+    as _i5;
+import 'package:nutri_mind/presentation/view/home/home_screen.dart' as _i6;
+import 'package:nutri_mind/presentation/view/scan_meal/scan_result_screen.dart'
+    as _i11;
+import 'package:nutri_mind/presentation/view/scan_meal/scanning_screen.dart'
+    as _i10;
+import 'package:nutri_mind/presentation/view/splash/splash_screen.dart' as _i12;
 
 /// generated route for
 /// [_i1.AiPoweredNutritionScreen]
-class AiPoweredNutritionRoute extends _i13.PageRouteInfo<void> {
-  const AiPoweredNutritionRoute({List<_i13.PageRouteInfo>? children})
+class AiPoweredNutritionRoute extends _i14.PageRouteInfo<void> {
+  const AiPoweredNutritionRoute({List<_i14.PageRouteInfo>? children})
     : super(AiPoweredNutritionRoute.name, initialChildren: children);
 
   static const String name = 'AiPoweredNutritionRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
       return const _i1.AiPoweredNutritionScreen();
@@ -51,93 +53,109 @@ class AiPoweredNutritionRoute extends _i13.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.CreateAnAccountScreen]
-class CreateAnAccountRoute extends _i13.PageRouteInfo<void> {
-  const CreateAnAccountRoute({List<_i13.PageRouteInfo>? children})
+/// [_i2.ChangePasswordScreen]
+class ChangePasswordRoute extends _i14.PageRouteInfo<void> {
+  const ChangePasswordRoute({List<_i14.PageRouteInfo>? children})
+    : super(ChangePasswordRoute.name, initialChildren: children);
+
+  static const String name = 'ChangePasswordRoute';
+
+  static _i14.PageInfo page = _i14.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.ChangePasswordScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i3.CreateAnAccountScreen]
+class CreateAnAccountRoute extends _i14.PageRouteInfo<void> {
+  const CreateAnAccountRoute({List<_i14.PageRouteInfo>? children})
     : super(CreateAnAccountRoute.name, initialChildren: children);
 
   static const String name = 'CreateAnAccountRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i2.CreateAnAccountScreen();
+      return const _i3.CreateAnAccountScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i3.DietPlannerScreen]
-class DietPlannerRoute extends _i13.PageRouteInfo<void> {
-  const DietPlannerRoute({List<_i13.PageRouteInfo>? children})
+/// [_i4.DietPlannerScreen]
+class DietPlannerRoute extends _i14.PageRouteInfo<void> {
+  const DietPlannerRoute({List<_i14.PageRouteInfo>? children})
     : super(DietPlannerRoute.name, initialChildren: children);
 
   static const String name = 'DietPlannerRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i3.DietPlannerScreen();
+      return const _i4.DietPlannerScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i4.GeneratedDietScreen]
-class GeneratedDietRoute extends _i13.PageRouteInfo<void> {
-  const GeneratedDietRoute({List<_i13.PageRouteInfo>? children})
+/// [_i5.GeneratedDietScreen]
+class GeneratedDietRoute extends _i14.PageRouteInfo<void> {
+  const GeneratedDietRoute({List<_i14.PageRouteInfo>? children})
     : super(GeneratedDietRoute.name, initialChildren: children);
 
   static const String name = 'GeneratedDietRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i4.GeneratedDietScreen();
+      return const _i5.GeneratedDietScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i5.HomeScreen]
-class HomeRoute extends _i13.PageRouteInfo<void> {
-  const HomeRoute({List<_i13.PageRouteInfo>? children})
+/// [_i6.HomeScreen]
+class HomeRoute extends _i14.PageRouteInfo<void> {
+  const HomeRoute({List<_i14.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i5.HomeScreen();
+      return const _i6.HomeScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i6.LoginScreen]
-class LoginRoute extends _i13.PageRouteInfo<void> {
-  const LoginRoute({List<_i13.PageRouteInfo>? children})
+/// [_i7.LoginScreen]
+class LoginRoute extends _i14.PageRouteInfo<void> {
+  const LoginRoute({List<_i14.PageRouteInfo>? children})
     : super(LoginRoute.name, initialChildren: children);
 
   static const String name = 'LoginRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i6.LoginScreen();
+      return const _i7.LoginScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i7.OTPVerificationScreen]
+/// [_i8.OTPVerificationScreen]
 class OTPVerificationRoute
-    extends _i13.PageRouteInfo<OTPVerificationRouteArgs> {
+    extends _i14.PageRouteInfo<OTPVerificationRouteArgs> {
   OTPVerificationRoute({
-    _i14.Key? key,
+    _i15.Key? key,
     required String email,
-    List<_i13.PageRouteInfo>? children,
+    List<_i14.PageRouteInfo>? children,
   }) : super(
          OTPVerificationRoute.name,
          args: OTPVerificationRouteArgs(key: key, email: email),
@@ -146,11 +164,11 @@ class OTPVerificationRoute
 
   static const String name = 'OTPVerificationRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<OTPVerificationRouteArgs>();
-      return _i7.OTPVerificationScreen(key: args.key, email: args.email);
+      return _i8.OTPVerificationScreen(key: args.key, email: args.email);
     },
   );
 }
@@ -158,7 +176,7 @@ class OTPVerificationRoute
 class OTPVerificationRouteArgs {
   const OTPVerificationRouteArgs({this.key, required this.email});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final String email;
 
@@ -169,81 +187,81 @@ class OTPVerificationRouteArgs {
 }
 
 /// generated route for
-/// [_i8.ResetPasswordScreen]
-class ResetPasswordRoute extends _i13.PageRouteInfo<void> {
-  const ResetPasswordRoute({List<_i13.PageRouteInfo>? children})
+/// [_i9.ResetPasswordScreen]
+class ResetPasswordRoute extends _i14.PageRouteInfo<void> {
+  const ResetPasswordRoute({List<_i14.PageRouteInfo>? children})
     : super(ResetPasswordRoute.name, initialChildren: children);
 
   static const String name = 'ResetPasswordRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i8.ResetPasswordScreen();
+      return const _i9.ResetPasswordScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i9.ScanMealScreen]
-class ScanMealRoute extends _i13.PageRouteInfo<void> {
-  const ScanMealRoute({List<_i13.PageRouteInfo>? children})
+/// [_i10.ScanMealScreen]
+class ScanMealRoute extends _i14.PageRouteInfo<void> {
+  const ScanMealRoute({List<_i14.PageRouteInfo>? children})
     : super(ScanMealRoute.name, initialChildren: children);
 
   static const String name = 'ScanMealRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i9.ScanMealScreen();
+      return const _i10.ScanMealScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i10.ScanResultScreen]
-class ScanResultRoute extends _i13.PageRouteInfo<void> {
-  const ScanResultRoute({List<_i13.PageRouteInfo>? children})
+/// [_i11.ScanResultScreen]
+class ScanResultRoute extends _i14.PageRouteInfo<void> {
+  const ScanResultRoute({List<_i14.PageRouteInfo>? children})
     : super(ScanResultRoute.name, initialChildren: children);
 
   static const String name = 'ScanResultRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i10.ScanResultScreen();
+      return const _i11.ScanResultScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i11.SplashScreen]
-class SplashRoute extends _i13.PageRouteInfo<void> {
-  const SplashRoute({List<_i13.PageRouteInfo>? children})
+/// [_i12.SplashScreen]
+class SplashRoute extends _i14.PageRouteInfo<void> {
+  const SplashRoute({List<_i14.PageRouteInfo>? children})
     : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i11.SplashScreen();
+      return const _i12.SplashScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i12.TrainerRegistrationScreen]
-class TrainerRegistrationRoute extends _i13.PageRouteInfo<void> {
-  const TrainerRegistrationRoute({List<_i13.PageRouteInfo>? children})
+/// [_i13.TrainerRegistrationScreen]
+class TrainerRegistrationRoute extends _i14.PageRouteInfo<void> {
+  const TrainerRegistrationRoute({List<_i14.PageRouteInfo>? children})
     : super(TrainerRegistrationRoute.name, initialChildren: children);
 
   static const String name = 'TrainerRegistrationRoute';
 
-  static _i13.PageInfo page = _i13.PageInfo(
+  static _i14.PageInfo page = _i14.PageInfo(
     name,
     builder: (data) {
-      return const _i12.TrainerRegistrationScreen();
+      return const _i13.TrainerRegistrationScreen();
     },
   );
 }

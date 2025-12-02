@@ -67,7 +67,7 @@ class CommonTextField extends StatelessWidget {
                       color: appColors.lightBlue,
                       fontWeight: FontWeight.w600,
                       fontFamily: FontFamily.inter,
-                      fontSize: 17
+                      fontSize: 20
                   ),
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -76,7 +76,7 @@ class CommonTextField extends StatelessWidget {
                       color: appColors.lightBlue,
                       fontFamily: FontFamily.inter,
                       fontWeight: FontWeight.w400,
-                      fontSize: 14,
+                      fontSize: 16,
                     ),
                   ),
                 ),

@@ -130,7 +130,9 @@ class HomeScreen extends StatelessWidget {
                           width: (screenSize.width) / 2.5,
                           child: CustomButton(
                             title: "Join as Trainer",
-                            onPressed: () {},
+                            onPressed: () {
+                              viewModel.handleNavigationToLoginOrSignUpScreen();
+                            },
                             backgroundColor: appColors.teal,
                             textColor: appColors.primaryWhite,
                             borderColor: appColors.teal,

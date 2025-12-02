@@ -74,4 +74,9 @@ class NavigationService {
     appRouter.navigate(OTPVerificationRoute(email: enteredEmail));
   }
 
+  ///
+  Future<void> navigateToChangePasswordScreen() async {
+    appRouter.navigate(ChangePasswordRoute());
+  }
+
 }

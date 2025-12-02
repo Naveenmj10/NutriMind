@@ -94,6 +94,10 @@ class $AssetsImagesGen {
   AssetGenImage get icnScanMeal =>
       const AssetGenImage('assets/images/icn_scan_meal.png');
 
+  /// File path: assets/images/icn_success_tick.png
+  AssetGenImage get icnSuccessTick =>
+      const AssetGenImage('assets/images/icn_success_tick.png');
+
   /// File path: assets/images/icn_tick.png
   AssetGenImage get icnTick =>
       const AssetGenImage('assets/images/icn_tick.png');
@@ -135,6 +139,7 @@ class $AssetsImagesGen {
     icnOatMeal,
     icnProtein,
     icnScanMeal,
+    icnSuccessTick,
     icnTick,
     icnTrainers,
     icnUpload,

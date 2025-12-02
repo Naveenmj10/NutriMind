@@ -25,7 +25,7 @@ class VerifyOtpViewModel extends ViewModel<VerifyOtpViewModel, VerifyOtpViewStat
 
   }
 
-  Future <void> handleNavigationToScanResultsScreen() async {
-    navigationService.navigateToScanResultsScreen();
+  Future <void> handleNavigationToChangePasswordScreen() async {
+    navigationService.navigateToChangePasswordScreen();
   }
 }

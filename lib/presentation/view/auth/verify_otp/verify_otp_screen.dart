@@ -63,9 +63,10 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     });
   }
 
-  void _verifyOTP() {
+  void _verifyOTP(VerifyOtpViewModel viewModel) {
     if (_isComplete) {
       print("Verifying OTP: ${_pinController.text}");
+      viewModel.handleNavigationToChangePasswordScreen();
     }
   }
 
@@ -153,7 +154,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
 
                       const SizedBox(height: 30),
 
-                      _buildContinueButton(appColors),
+                      _buildContinueButton(appColors, viewModel),
                     ],
                   ),
                 ),
@@ -255,11 +256,15 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
   }
 
   // ------------------ CONTINUE BUTTON ------------------
-  Widget _buildContinueButton(AppColors colors) {
+  Widget _buildContinueButton(AppColors colors, VerifyOtpViewModel viewModel) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: _isComplete ? _verifyOTP : null,
+        onPressed: _isComplete
+            ? () {
+                _verifyOTP(viewModel);
+              }
+            : null,
         style: ElevatedButton.styleFrom(
           backgroundColor: _isComplete
               ? const Color(0xFF2ECC71)
