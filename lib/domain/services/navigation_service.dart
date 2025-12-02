@@ -59,5 +59,10 @@ class NavigationService {
     appRouter.navigate(const CreateAnAccountRoute());
   }
 
+  ///
+  Future<void> navigateToLoginScreen() async {
+    appRouter.navigate(const LoginRoute());
+  }
+
 
 }

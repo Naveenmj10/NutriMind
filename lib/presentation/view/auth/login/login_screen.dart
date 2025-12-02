@@ -2,8 +2,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nutri_mind/foundation/assets/assets.gen.dart';
-import 'package:nutri_mind/presentation/view_model/create_account/create_account_provider.dart';
-import 'package:nutri_mind/presentation/view_model/create_account/create_account_view_model.dart';
+import 'package:nutri_mind/presentation/view_model/login/login_provider.dart';
+import 'package:nutri_mind/presentation/view_model/login/login_view_model.dart';
 import 'package:provider/provider.dart';
 import '../../../../foundation/assets/fonts.gen.dart';
 import '../../../../foundation/theme/colors.dart';
@@ -11,25 +11,22 @@ import '../../../../application/injections/injector.dart';
 import '../../../widgets/custom/common_textfield_with_title.dart';
 
 @RoutePage()
-class CreateAnAccountScreen extends StatefulWidget {
-  const CreateAnAccountScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<CreateAnAccountScreen> createState() => _CreateAnAccountScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   bool _obscurePassword = true;
 
-  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  bool _nameValid = false;
   bool _emailValid = false;
   bool _passwordValid = false;
 
-  final _nameFocus = FocusNode();
   final _emailFocus = FocusNode();
   final _passwordFocus = FocusNode();
 
@@ -37,15 +34,8 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
   void initState() {
     super.initState();
 
-    _nameController.addListener(_validateName);
     _emailController.addListener(_validateEmail);
     _passwordController.addListener(_validatePassword);
-  }
-
-  void _validateName() {
-    setState(() {
-      _nameValid = _nameController.text.trim().length >= 3;
-    });
   }
 
   void _validateEmail() {
@@ -62,16 +52,18 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
     });
   }
 
-  bool get _isFormValid => _nameValid && _emailValid && _passwordValid;
+  bool get _isFormValid => _emailValid && _passwordValid;
 
   @override
   Widget build(BuildContext context) {
     final AppColors appColors = injector<AppColors>();
 
-    return CreateAccountProvider(
+    return LoginProvider(
       builder: (context, child) {
-        final CreateAccountViewModel viewModel =
-            Provider.of<CreateAccountViewModel>(context, listen: true);
+        final LoginViewModel viewModel = Provider.of<LoginViewModel>(
+          context,
+          listen: true,
+        );
         final AppColors appColors = injector<AppColors>();
 
         return Scaffold(
@@ -85,16 +77,6 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CommonTextField(
-                        title: "Full Name",
-                        hintText: "Enter your full name",
-                        controller: _nameController,
-                        focusNode: _nameFocus,
-                        isValid: _nameValid,
-                      ),
-
-                      const SizedBox(height: 22),
-
                       CommonTextField(
                         title: "Email",
                         hintText: "Enter your email address",
@@ -122,6 +104,10 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
 
                       const SizedBox(height: 30),
 
+                      _buildForgetPasswordRedirect(() {}, appColors),
+
+                      const SizedBox(height: 30),
+
                       _buildTerms(),
 
                       const SizedBox(height: 30),
@@ -138,9 +124,9 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
 
                       const SizedBox(height: 20),
 
-                      _buildLoginRedirect((){
+                      _buildCreateAccountRedirect(() {
                         viewModel.handleNavigationToCreateAccountScreen();
-                      }),
+                      }, appColors),
                     ],
                   ),
                 ),
@@ -172,7 +158,7 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
                 color: Colors.black,
               ),
               Text(
-                "Create an account",
+                "Login to your account",
                 style: TextStyle(
                   fontSize: 32,
                   fontFamily: FontFamily.inter,
@@ -186,7 +172,7 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
           Padding(
             padding: const EdgeInsets.only(left: 50.0),
             child: Text(
-              "Let's create your account.",
+              "It’s great to see you again.",
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black.withOpacity(0.7),
@@ -301,20 +287,64 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
     );
   }
 
-  Widget _buildLoginRedirect(VoidCallback onLoginTap) {
+  Widget _buildForgetPasswordRedirect(
+    VoidCallback onTapForgetPassword,
+    AppColors appColors,
+  ) {
+    return RichText(
+      text: TextSpan(
+        style: const TextStyle(color: Colors.white60, fontSize: 16),
+        children: [
+          TextSpan(
+            text: "Forgot your password?",
+            style: TextStyle(
+              fontFamily: FontFamily.inter,
+              fontSize: 15,
+              color: appColors.teal,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          TextSpan(
+            text: " Reset your password",
+            style: TextStyle(
+              color: appColors.teal,
+              fontFamily: FontFamily.inter,
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+            ),
+            recognizer: TapGestureRecognizer()..onTap = onTapForgetPassword,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCreateAccountRedirect(
+    VoidCallback onCreateAccountTap,
+    AppColors appColors,
+  ) {
     return Center(
       child: RichText(
         text: TextSpan(
           style: const TextStyle(color: Colors.white60, fontSize: 16),
           children: [
-            const TextSpan(text: "Already have an account? "),
             TextSpan(
-              text: "Log In",
-              style: const TextStyle(
-                color: Color(0xFF2ECC71),
+              text: "Don't have an account? ",
+              style: TextStyle(
+                fontFamily: FontFamily.inter,
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            TextSpan(
+              text: "Create",
+              style: TextStyle(
+                color: appColors.teal,
+                fontFamily: FontFamily.inter,
+                fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),
-              recognizer: TapGestureRecognizer()..onTap = onLoginTap,
+              recognizer: TapGestureRecognizer()..onTap = onCreateAccountTap,
             ),
           ],
         ),

@@ -18,5 +18,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(path: '/scan-result', page: ScanResultRoute.page),
     AutoRoute(path: '/auth-register', page: TrainerRegistrationRoute.page),
     AutoRoute(path: '/auth-create_account', page: CreateAnAccountRoute.page),
+    AutoRoute(path: '/auth-login', page: LoginRoute.page),
   ];
 }

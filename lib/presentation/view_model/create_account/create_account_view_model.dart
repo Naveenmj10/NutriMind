@@ -179,7 +179,7 @@ class CreateAccountViewModel extends ViewModel<CreateAccountViewModel, CreateAcc
     }
   }
 
-  Future<void> handleNavigationToScanResultsScreen() async {
-    // Implement navigation logic
+  Future<void> handleNavigationToCreateAccountScreen() async {
+    navigationService.navigateToCreateAccountScreen();
   }
 }
