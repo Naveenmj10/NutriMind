@@ -71,5 +71,8 @@ class AppColors {
 
   ///
   final Color orangeColor = const Color(0xffFF7042);
+  final Color greyBorder = const Color(0xff00000000);
+
+
 
 }

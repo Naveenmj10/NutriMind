@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:nutri_mind/presentation/view/dashboard/meal_plan_screen.dart' hide injector;
 
 import '../../../application/injections/injector.dart';
 import '../../../foundation/assets/assets.gen.dart';
@@ -51,7 +52,6 @@ class _HealthDashboardScreenState extends State<HealthDashboardScreen> {
             ),
             const SizedBox(height: 24),
 
-            // ---------------- TOP 3 METRIC CARDS ----------------
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -64,7 +64,6 @@ class _HealthDashboardScreenState extends State<HealthDashboardScreen> {
             ),
             const SizedBox(height: 28),
 
-            // ---------------- HUMAN BODY ANALYSIS BOX ----------------
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -124,7 +123,9 @@ class _HealthDashboardScreenState extends State<HealthDashboardScreen> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            IconButton(onPressed: (){},
+                            IconButton(onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MealPlanScreen()));
+                            },
                                 icon: Icon(Icons.more_horiz_rounded, color: appColors.hintStyle1,)),
                             Container()
                           ],
