@@ -231,68 +231,84 @@ class HomeScreen extends StatelessWidget {
                         // Two buttons at the top
                         Row(
                           children: [
-                            InkWell(
-                              onTap: (){
-                                viewModel.handleNavigationToScanMealsScreen();
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 18,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: appColors.teal,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.search,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      "Scan Your Meal",
-                                      style: TextStyle(
-                                        fontFamily: FontFamily.inter,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  viewModel.handleNavigationToScanMealsScreen();
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 16,
+                                    vertical: 15,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: appColors.teal,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.search,
                                         color: Colors.white,
+                                        size: 18,
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(width: 6),
+                                      Flexible(
+                                        child: Text(
+                                          "Scan Your Meal",
+                                          style: TextStyle(
+                                            fontFamily: FontFamily.inter,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
+
                             const SizedBox(width: 12),
-                            InkWell(
-                              onTap: (){
-                                viewModel.handleNavigationToAIPoweredNutritionScreen();
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 18,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade900,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Text(
-                                  "AI-Powered Nutrition",
-                                  style: TextStyle(
-                                    fontFamily: FontFamily.inter,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  viewModel.handleNavigationToAIPoweredNutritionScreen();
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 16,
+                                    vertical: 15,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade900,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "AI-Powered Nutrition",
+                                      style: TextStyle(
+                                        fontFamily: FontFamily.inter,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
+                                      textAlign: TextAlign.center,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-
                         const SizedBox(height: 30),
 
                         // "How is it work?" title

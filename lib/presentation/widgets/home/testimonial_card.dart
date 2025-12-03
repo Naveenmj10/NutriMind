@@ -27,8 +27,20 @@ class TestimonialCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 360;
+    final isMediumScreen = screenWidth < 600;
+
+    // Responsive values
+    final cardPadding = isSmallScreen ? 16.0 : (isMediumScreen ? 20.0 : 24.0);
+    final testimonialFontSize = isSmallScreen ? 14.0 : 16.0;
+    final nameFontSize = isSmallScreen ? 18.0 : (isMediumScreen ? 20.0 : 24.0);
+    final roleFontSize = isSmallScreen ? 14.0 : 16.0;
+    final starSize = isSmallScreen ? 20.0 : (isMediumScreen ? 24.0 : 28.0);
+    final verticalSpacing = isSmallScreen ? 12.0 : 20.0;
+
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(cardPadding),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(16),
@@ -40,7 +52,7 @@ class TestimonialCard extends StatelessWidget {
           Text(
             testimonial,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: testimonialFontSize,
               fontFamily: FontFamily.inter,
               fontWeight: FontWeight.w400,
               color: textColor,
@@ -48,49 +60,58 @@ class TestimonialCard extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: verticalSpacing),
 
-          // Name and Stars Row
+          // Name and Stars Row (same layout, just responsive)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               // Name and Role Column
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: FontFamily.inter,
-                      fontWeight: FontWeight.bold,
-                      color: nameColor,
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                        fontSize: nameFontSize,
+                        fontFamily: FontFamily.inter,
+                        fontWeight: FontWeight.bold,
+                        color: nameColor,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                     ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    role,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: FontFamily.inter,
-                      fontWeight: FontWeight.w400,
-                      color: roleColor,
+                    const SizedBox(height: 4),
+                    Text(
+                      role,
+                      style: TextStyle(
+                        fontSize: roleFontSize,
+                        fontFamily: FontFamily.inter,
+                        fontWeight: FontWeight.w400,
+                        color: roleColor,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
+
+              const SizedBox(width: 8),
 
               // Stars
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: List.generate(
                   5,
                       (index) => Padding(
-                    padding: const EdgeInsets.only(left: 4),
+                    padding: EdgeInsets.only(left: index == 0 ? 0 : 4),
                     child: Icon(
                       index < rating ? Icons.star : Icons.star_border,
                       color: starColor,
-                      size: 28,
+                      size: starSize,
                     ),
                   ),
                 ),

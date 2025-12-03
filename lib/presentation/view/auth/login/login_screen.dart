@@ -162,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Text(
                 "Login to your account",
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: 26,
                   fontFamily: FontFamily.inter,
                   fontWeight: FontWeight.w600,
                   color: Colors.black.withOpacity(0.85),

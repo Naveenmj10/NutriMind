@@ -139,7 +139,7 @@ class _CreateAnAccountScreenState extends State<CreateAnAccountScreen> {
                       const SizedBox(height: 20),
 
                       _buildLoginRedirect((){
-                        viewModel.handleNavigationToCreateAccountScreen();
+                        Navigator.of(context).pop();
                       }),
                     ],
                   ),
