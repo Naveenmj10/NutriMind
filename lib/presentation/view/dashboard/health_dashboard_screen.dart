@@ -9,6 +9,7 @@ import '../../widgets/custom/speedmeter_painter.dart';
 
 import '../../widgets/custom/weight_row.dart';
 import '../../widgets/custom/weight_tracking_chart.dart';
+import '../trainer/trainer_connect_screen.dart';
 
 @RoutePage()
 class HealthDashboardScreen extends StatefulWidget {
@@ -124,7 +125,7 @@ class _HealthDashboardScreenState extends State<HealthDashboardScreen> {
                               ),
                             ),
                             IconButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => MealPlanScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => TrainerConnectScreen()));
                             },
                                 icon: Icon(Icons.more_horiz_rounded, color: appColors.hintStyle1,)),
                             Container()
