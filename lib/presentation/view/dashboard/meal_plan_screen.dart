@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:nutri_mind/foundation/assets/fonts.gen.dart';
 import '../../../foundation/theme/colors.dart';
+import '../../widgets/custom/custom_painter_meal_plan.dart';
 final injector = GetIt.instance;
 
 class MealPlanScreen extends StatefulWidget {
@@ -67,8 +70,8 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
                   SizedBox(height: h(20)),
 
                   _buildTotalCaloriesCard(w, h, sp),
-
-                  SizedBox(height: h(20)),
+                  // buildTotalCaloriesCard(w,h,sp),
+                  SizedBox(height: h(26)),
 
                   _mealCard(
                     w: w,
@@ -83,7 +86,7 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
                     "assets/images/breakfast_img.png",
                   ),
 
-                  SizedBox(height: h(16)),
+                  SizedBox(height: h(8)),
 
                   _mealCard(
                     w: w,
@@ -137,38 +140,44 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
           SizedBox(height: h(10)),
           _macroProgress(label: "Fat", value: 0.4, color: Colors.redAccent.shade200, w: w, h: h, sp: sp),
 
-          SizedBox(height: h(12)),
-          Column(
+          SizedBox(height: h(16)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _tag("Water Intake 💧", sp),
-              SizedBox(height: h(12)),
-              _tag("Heart Rate   ❤️", sp),
+              Column(
+                children: [
+                  _tag("Water Intake 💧", sp),
+                  SizedBox(height: h(12)),
+                  _tag("Heart Rate   ❤️", sp),
+                ],
+              ),
+              Column(
+                children: [
+                  Center(
+                    child: CustomPaint(
+                      painter: StepsPainter(),
+                      child: SizedBox(
+                        width: w(120),
+                        height: w(120),
+                        child: Center(
+                          child: Text(
+                            "3,500 Steps",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: sp(13),
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
 
-          SizedBox(height: h(20)),
-
-          Center(
-            child: CustomPaint(
-              painter: StepsPainter(appColors),
-              child: SizedBox(
-                width: w(140),
-                height: w(140),
-                child: Center(
-                  child: Text(
-                    "3,500 Steps",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: sp(15),
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          SizedBox(height: h(8)),
+          SizedBox(height: h(4)),
           Text(
             "More values →",
             style: TextStyle(
@@ -181,6 +190,87 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
       ),
     );
   }
+
+
+  Widget _macroProgress({
+    required String label,
+    required double value,
+    required Color color,
+    required double Function(double) w,
+    required double Function(double) h,
+    required double Function(double) sp,
+  }) {
+    return Row(
+      children: [
+        Icon(Icons.circle, color: color, size: sp(10)),
+        SizedBox(width: w(6)),
+        SizedBox(
+          width: w(70),
+          child: Text(
+            label,
+            style: TextStyle(color: Colors.white, fontSize: sp(13)),
+          ),
+        ),
+        Expanded(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: LinearProgressIndicator(
+              value: value,
+              color: color,
+              backgroundColor: Colors.white24,
+              minHeight: h(6),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _healthTag({
+    required String title,
+    required String value,
+    required String asset,
+    required double Function(double) w,
+    required double Function(double) h,
+    required double Function(double) sp,
+  }) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: w(12), vertical: h(10)),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(w(12)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: sp(13),
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Row(
+            children: [
+              Image.asset(asset, width: w(28), height: w(28)),
+              SizedBox(width: w(6)),
+              Text(
+                value,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: sp(12),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+
 
   Widget _tag(String text, double Function(double) sp) {
     return Container(
@@ -197,54 +287,6 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
     );
   }
 
-  Widget _macroProgress({
-    required String label,
-    required double value,
-    required Color color,
-    required double Function(double) w,
-    required double Function(double) h,
-    required double Function(double) sp,
-  }) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: h(10)),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-
-          /// Colored dot
-          Icon(Icons.circle, color: color, size: sp(10)),
-
-          SizedBox(width: w(8)),
-
-          /// Label
-          Text(
-            label,
-            style: TextStyle(
-              color: appColors.primaryWhite,
-              fontSize: sp(12),
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-
-          SizedBox(width: w(16)),
-
-          /// Progress bar (exact same width look)
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(w(20)),
-              child: LinearProgressIndicator(
-                value: value,
-                color: color,
-                backgroundColor: appColors.primaryWhite,
-                minHeight: h(6),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
 
   Widget _mealCard({
     required double Function(double) w,
@@ -257,123 +299,155 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
     required String servings,
     required String img,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: appColors.grey,
-        borderRadius: BorderRadius.circular(w(16)),
-        border: Border.all(color: appColors.primaryWhite),
-      ),
-      child: Column(
+    return SizedBox(
+      child: Stack(
+        clipBehavior: Clip.none,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(w(16))),
-            child: Image.asset(
-              img,
-              height: h(160),
-              width: double.infinity,
-              fit: BoxFit.cover,
+
+          Container(
+            margin: EdgeInsets.only(top: h(70)), // space for overlapping image
+            decoration: BoxDecoration(
+              color: appColors.grey,
+              borderRadius: BorderRadius.circular(w(16)),
+              border: Border.all(color: appColors.primaryWhite),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(w(14)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // SizedBox(height: h(50)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        kcal,
+                        style: TextStyle(
+                          color: appColors.darkGreen,
+                          fontSize: sp(14),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.cloud_outlined, color: appColors.darkGreenNew),
+                          SizedBox(width: 4),
+                          Icon(Icons.star_outline, color: appColors.primaryWhite),
+                        ],
+                      )
+                    ],
+                  ),
+
+                  SizedBox(height: h(20)),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        mealType,
+                        style: TextStyle(
+                          color: appColors.primaryWhite,
+                          fontFamily: FontFamily.inter,
+                          fontWeight: FontWeight.w700,
+                          fontSize: sp(20),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          _iconButton(
+                              Icons.swap_vertical_circle_outlined, w, sp, "Swap"),
+                          SizedBox(width: w(8)),
+                          _iconButton(Icons.copy_outlined, w, sp, "Copy"),
+                        ],
+                      )
+                    ],
+                  ),
+
+                  SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Icon(Icons.av_timer_outlined,
+                          size: sp(14), color: appColors.textGrey),
+                      SizedBox(width: w(4)),
+                      Text(
+                        time,
+                        style: TextStyle(
+                          color: appColors.primaryWhite,
+                          fontSize: sp(13),
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: h(8)),
+
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: appColors.primaryWhite,
+                      fontFamily: FontFamily.inter,
+                      fontSize: sp(20),
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+
+                  SizedBox(height: h(5)),
+
+                  Text(
+                    servings,
+                    style: TextStyle(
+                      color: appColors.primaryWhite,
+                      fontSize: sp(14),
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+
+                  SizedBox(height: h(10)),
+                  Row(
+                    children: [
+                      Icon(Icons.task, color: appColors.green, size: 16),
+                      SizedBox(width: 4),
+                      Text(
+                        "Ingredients",
+                        style: TextStyle(
+                          color: appColors.green,
+                          fontSize: sp(14),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
 
-          Padding(
-            padding: EdgeInsets.all(w(14)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  kcal,
-                  style: TextStyle(
-                    color: appColors.lightGreen,
-                    fontSize: sp(14),
-                    fontWeight: FontWeight.w600,
-                  ),
+          /// OVERLAPPING IMAGE — EXACT SAME LOOK
+          Positioned(
+            top: 0,
+            left: w(30),
+            right: w(30),
+            child: Container(
+              height: h(120),
+              width: 170,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  img,
+                  fit: BoxFit.contain,
                 ),
-                SizedBox(height: h(4)),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      mealType,
-                      style: TextStyle(
-                        color: appColors.primaryWhite,
-                        fontFamily: FontFamily.inter,
-                        fontWeight: FontWeight.w700,
-                        fontSize: sp(20),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        _iconButton(Icons.swap_vertical_circle_outlined, w, sp, "Swap"),
-                        SizedBox(width: w(8)),
-                        _iconButton(Icons.copy_outlined, w, sp, "Copy"),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(height: 4),
-                Row(
-                  children: [
-                    Icon(Icons.av_timer_outlined, size: sp(14), color: appColors.textGrey),
-                    SizedBox(width: w(4)),
-                    Text(
-                      time,
-                      style: TextStyle(
-                        color: appColors.primaryWhite,
-                        fontSize: sp(13),
-                        fontFamily: FontFamily.inter,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: h(8)),
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: appColors.primaryWhite,
-                    fontFamily: FontFamily.inter,
-                    fontSize: sp(20),
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-
-                SizedBox(height: h(5)),
-
-                SizedBox(height: h(5)),
-                Text(
-                  servings,
-                  style: TextStyle(
-                    color: appColors.primaryWhite,
-                    fontSize: sp(14),
-                    fontWeight: FontWeight.w400,
-                    fontFamily: FontFamily.inter,
-                  ),
-                ),
-
-                SizedBox(height: h(10)),
-                Row(
-                  children: [
-                    Icon(Icons.task, color: appColors.green, size: 16,),
-                    SizedBox(width: 4),
-                    Text(
-                      "Ingredients",
-                      style: TextStyle(
-                        color: appColors.green,
-                        fontSize: sp(14),
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              ),
             ),
-          )
+          ),
+
         ],
       ),
     );
   }
+
 
   Widget _iconButton(IconData icon, double Function(double) w, double Function(double) sp, String text) {
     return Container(
@@ -396,44 +470,3 @@ class _MealPlanScreenState extends State<MealPlanScreen> {
 
 
 
-
-
-class StepsPainter extends CustomPainter {
-  final AppColors colors;
-  StepsPainter(this.colors);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    double stroke = 10;
-
-    Paint c1 = Paint()
-      ..color = colors.chartColor
-      ..strokeWidth = stroke
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    Paint c2 = Paint()
-      ..color = colors.stepsColor
-      ..strokeWidth = stroke
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    Paint c3 = Paint()
-      ..color = Colors.red
-      ..strokeWidth = stroke
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    double radius = size.width / 2;
-
-    canvas.drawArc(Rect.fromCircle(center: size.center(Offset.zero), radius: radius),
-        -1.5, 1.5, false, c1);
-    canvas.drawArc(Rect.fromCircle(center: size.center(Offset.zero), radius: radius),
-        0.0, 1.2, false, c2);
-    canvas.drawArc(Rect.fromCircle(center: size.center(Offset.zero), radius: radius),
-        1.2, 0.8, false, c3);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
-}
