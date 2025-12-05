@@ -23,6 +23,9 @@ class AppRouter extends RootStackRouter {
     AutoRoute(path: '/auth-verify-otp', page: OTPVerificationRoute.page),
     AutoRoute(path: '/auth-change-password', page: ChangePasswordRoute.page),
     AutoRoute(path: '/dashboard-health', page: HealthDashboardRoute.page),
+    AutoRoute(path: '/meal-plan', page: MealPlanRoute.page),
+    AutoRoute(path: '/trainer-connect', page: TrainerConnectRoute.page),
+    AutoRoute(path: '/fat-loss-guide', page: FatLossGuideRoute.page),
 
   ];
 }

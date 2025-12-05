@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:nutri_mind/data/model/fat_loss_model.dart';
 import 'package:nutri_mind/presentation/widgets/custom/fat_loss_card.dart';
@@ -6,6 +7,7 @@ import '../../../data/model/workout_model.dart';
 import '../../../foundation/theme/colors.dart';
 import '../../widgets/custom/workout_Card.dart';
 
+@RoutePage()
 class FatLossGuideScreen extends StatefulWidget {
   FatLossGuideScreen({super.key});
 

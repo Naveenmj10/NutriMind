@@ -82,4 +82,13 @@ class NavigationService {
   Future<void> navigateToHealthDashBoardScreen() async {
     appRouter.navigate(const HealthDashboardRoute());
   }
+  Future<void> navigateToMealPlanScreen() async {
+    appRouter.navigate(const MealPlanRoute());
+  }
+  Future<void> navigateToTrainerConnectScreen() async {
+    appRouter.navigate( TrainerConnectRoute());
+  }
+  Future<void> navigateToFatLossGuideScreen() async {
+    appRouter.navigate( FatLossGuideRoute());
+  }
 }

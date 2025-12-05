@@ -29,4 +29,10 @@ class AiPoweredNutritionViewModel
   Future<void> handleNavigationToAIDietPlannerScreen() async {
     navigationService.navigateToAiDietPlannerScreen();
   }
+  Future<void> handleNavigationToFatLossGuideScreen() async {
+    navigationService.navigateToFatLossGuideScreen();
+  }
+  Future<void> handleNavigationToTrainerConnectScreen() async {
+    navigationService.navigateToTrainerConnectScreen();
+  }
 }

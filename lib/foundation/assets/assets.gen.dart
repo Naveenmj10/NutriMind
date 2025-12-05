@@ -26,6 +26,10 @@ class $AssetsImagesGen {
   AssetGenImage get blurImg =>
       const AssetGenImage('assets/images/blur_img.png');
 
+  /// File path: assets/images/breakfast_img.png
+  AssetGenImage get breakfastImg =>
+      const AssetGenImage('assets/images/breakfast_img.png');
+
   /// File path: assets/images/google_icon.png
   AssetGenImage get googleIcon =>
       const AssetGenImage('assets/images/google_icon.png');
@@ -113,6 +117,10 @@ class $AssetsImagesGen {
   AssetGenImage get icnUpload =>
       const AssetGenImage('assets/images/icn_upload.png');
 
+  /// File path: assets/images/lunch_img.png
+  AssetGenImage get lunchImg =>
+      const AssetGenImage('assets/images/lunch_img.png');
+
   /// File path: assets/images/trainer_regis_bg.png
   AssetGenImage get trainerRegisBg =>
       const AssetGenImage('assets/images/trainer_regis_bg.png');
@@ -124,11 +132,16 @@ class $AssetsImagesGen {
   /// File path: assets/images/welcome.png
   AssetGenImage get welcome => const AssetGenImage('assets/images/welcome.png');
 
+  /// File path: assets/images/yoga_img.png
+  AssetGenImage get yogaImg =>
+      const AssetGenImage('assets/images/yoga_img.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     aiImage,
     appleIcon,
     blurImg,
+    breakfastImg,
     googleIcon,
     human,
     icnApple,
@@ -151,9 +164,11 @@ class $AssetsImagesGen {
     icnTick,
     icnTrainers,
     icnUpload,
+    lunchImg,
     trainerRegisBg,
     weightImg,
     welcome,
+    yogaImg,
   ];
 }
 

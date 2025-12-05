@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
 import '../../../application/injections/injector.dart';
@@ -5,6 +6,7 @@ import '../../../data/model/workout_model.dart';
 import '../../../foundation/theme/colors.dart';
 import '../../widgets/custom/workout_Card.dart';
 
+@RoutePage()
 class TrainerConnectScreen extends StatefulWidget {
   TrainerConnectScreen({super.key});
 

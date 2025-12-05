@@ -169,6 +169,7 @@ class _AiPoweredNutritionScreenState extends State<AiPoweredNutritionScreen> {
                       setState(() {
                         selectedOption = "AI Fitness & Fat-Loss Guide";
                       });
+                      viewModel.handleNavigationToFatLossGuideScreen();
                       print("Selected: AI Fitness & Fat-Loss Guide");
                     },
                   ),
@@ -186,6 +187,7 @@ class _AiPoweredNutritionScreenState extends State<AiPoweredNutritionScreen> {
                       setState(() {
                         selectedOption = "Trainer Connect";
                       });
+                      viewModel.handleNavigationToTrainerConnectScreen();
                       print("Selected: Trainer Connect");
                     },
                   ),

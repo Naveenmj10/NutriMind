@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:nutri_mind/foundation/assets/fonts.gen.dart';
@@ -7,6 +8,7 @@ import '../../../foundation/theme/colors.dart';
 import '../../widgets/custom/custom_painter_meal_plan.dart';
 final injector = GetIt.instance;
 
+@RoutePage()
 class MealPlanScreen extends StatefulWidget {
   const MealPlanScreen({super.key});
 

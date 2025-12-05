@@ -50,4 +50,7 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
   Future <void> handleNavigationToLoginScreen() async {
       navigationService.navigateToLoginScreen();
   }
+  Future <void> handleNavigationToMealPlanScreen() async {
+      navigationService.navigateToMealPlanScreen();
+  }
 }

@@ -663,7 +663,9 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: CustomButton(
                         title: "Start as Fitness Lover",
-                        onPressed: () {},
+                        onPressed: () {
+                          viewModel.handleNavigationToAIPoweredNutritionScreen();
+                        },
                         backgroundColor: Colors.transparent,
                         textColor: appColors.primaryWhite,
                         borderColor: appColors.borderGrey,
@@ -758,7 +760,9 @@ class HomeScreen extends StatelessWidget {
                           right: 40,
                           child: CustomButton(
                             title: "Download Now",
-                            onPressed: () {},
+                            onPressed: () {
+                              viewModel.handleNavigationToMealPlanScreen();
+                            },
                             backgroundColor: appColors.teal,
                             textColor: appColors.primaryWhite,
                             borderColor: appColors.teal,
