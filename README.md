@@ -18,4 +18,4 @@ A new Flutter project.
 # Build
 
 --> apk : flutter build apk --flavor=prod -t lib/application/main/main_prod.dart --release
---> apk : flutter buildflutter build appbundle --flavor=prod -t lib/application/main/main_prod.dart --release apk --flavor=prod -t lib/application/main/main_prod.dart --release
+--> apk : flutter build appbundle --flavor=prod -t lib/application/main/main_prod.dart --release apk --flavor=prod -t lib/application/main/main_prod.dart --release
