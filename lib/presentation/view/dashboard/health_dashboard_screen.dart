@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:nutri_mind/presentation/view/dashboard/meal_plan_screen.dart' hide injector;
+import 'package:nutri_mind/presentation/view/trainer/fat_loss_guidle_screen.dart';
 
 import '../../../application/injections/injector.dart';
 import '../../../foundation/assets/assets.gen.dart';
@@ -125,7 +126,7 @@ class _HealthDashboardScreenState extends State<HealthDashboardScreen> {
                               ),
                             ),
                             IconButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => TrainerConnectScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => FatLossGuideScreen()));
                             },
                                 icon: Icon(Icons.more_horiz_rounded, color: appColors.hintStyle1,)),
                             Container()
