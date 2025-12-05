@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../application/injections/injector.dart';
 import '../../../data/model/workout_model.dart';
+import '../../../foundation/assets/fonts.gen.dart';
 import '../../../foundation/theme/colors.dart';
 import '../../widgets/custom/workout_Card.dart';
 
@@ -52,10 +53,15 @@ class _TrainerConnectScreenState extends State<TrainerConnectScreen> {
           ),
             child: IconButton(onPressed: (){
               Navigator.pop(context);
-            }, icon: Icon(Icons.arrow_back_ios_new_rounded, color: appColors.primaryWhite, size: 13,))),
+            }, icon: Icon(Icons.arrow_back_ios_new_rounded, color: appColors.primaryWhite, size: 20,))),
         title: Text(
           "Trainer Connect",
-          style: TextStyle(fontSize:16, fontWeight: FontWeight.w700, color: appColors.primaryWhite),
+          style: TextStyle(
+            fontSize: 28,
+            fontFamily: FontFamily.inter,
+            fontWeight: FontWeight.bold,
+            color: appColors.textGrey,
+          ),
         ),
       ),
 
