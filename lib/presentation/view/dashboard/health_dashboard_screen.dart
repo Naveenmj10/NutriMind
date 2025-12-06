@@ -10,6 +10,7 @@ import '../../widgets/custom/speedmeter_painter.dart';
 
 import '../../widgets/custom/weight_row.dart';
 import '../../widgets/custom/weight_tracking_chart.dart';
+import '../diet_planner/diet_home_screen.dart';
 import '../trainer/trainer_connect_screen.dart';
 
 @RoutePage()
@@ -126,7 +127,7 @@ class _HealthDashboardScreenState extends State<HealthDashboardScreen> {
                               ),
                             ),
                             IconButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => FatLossGuideScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => DietHomeScreen()));
                             },
                                 icon: Icon(Icons.more_horiz_rounded, color: appColors.hintStyle1,)),
                             Container()
